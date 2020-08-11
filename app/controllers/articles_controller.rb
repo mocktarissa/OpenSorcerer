@@ -9,11 +9,18 @@ class ArticlesController < ApplicationController
     def create
         @article =Article.new(article_params)
         @article.save
+        if(@article.errors.any?)
+        render 'new'
+        else    
+        redirect_to @article
+        #redirect_to article_path(@article)
+        end
     end
     def new
-        
+        @article = Article.new
     end
     def edit
+
     end 
 
     def update

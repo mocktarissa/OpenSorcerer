@@ -1,6 +1,12 @@
-<h1>Is it working ?
-
+<h1>Add New Article
 </h1>
+
+<% if @article.errors.any? %>
+ <h2>The following errors prevented the code from running </h2>
+    <% @article.errors.full_messages.each do |message|;  %>
+        <li><%= message%> </li> 
+    <% end %> 
+<% end %> 
 
 <%= form_with scope: :article , url: articles_path, local: true do |t|%>
     <div>
