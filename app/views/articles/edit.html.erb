@@ -1,0 +1,25 @@
+<h1>Edit Article </h1>
+
+<% if @article.errors.any? %>
+ <h2>The following errors prevented the code from running </h2>
+ <ul>
+    <% @article.errors.full_messages.each do |msg|;  %>
+           <li><%= msg %> </li>
+       <% end %> 
+ </ul>   
+<% end %> 
+
+<%= form_with(model: @article, local: true)  do |t|%>
+    <div>
+        <%= t.label :title %> <br>
+        <%= t.text_field :title %> 
+    </div>
+    <br>
+    <div>
+        <%= t.label :description %> <br>
+        <%= t.text_area :description %>  
+    </div>
+    <div>
+        <%= t.submit %> 
+    </div>
+<% end %> 

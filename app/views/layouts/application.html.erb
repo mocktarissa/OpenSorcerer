@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    
+    <%= link_to 'Home', root_path   %>
+    <%= link_to 'About', about_path   %>
+    <%= link_to 'Articles', articles_path   %>
+    <br>
+    <% flash.each do |name,message| %>
+    <%=message  %> 
+    <% end %>  
     <%= yield %>
   </body>
 </html>
