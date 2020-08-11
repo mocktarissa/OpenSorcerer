@@ -1,3 +1,18 @@
 <h1>Is it working ?
 
 </h1>
+
+<%= form_with scope: :article , url: articles_path, local: true do |t|%>
+    <div>
+        <%= t.label :title %> <br>
+        <%= t.text_field :title %> 
+    </div>
+    <br>
+    <div>
+        <%= t.label :description %> <br>
+        <%= t.text_area :description %>  
+    </div>
+    <div>
+        <%= t.submit %> 
+    </div>
+<% end %> 
